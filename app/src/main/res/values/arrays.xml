@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="programas">
+        <item>One Piece</item>
+        <item>Jojos Bizarre Adventure</item>
+        <item>Looney Tunes</item>
+    </string-array>
+</resources>
