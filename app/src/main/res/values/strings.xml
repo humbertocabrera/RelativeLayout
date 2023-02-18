@@ -2,5 +2,7 @@
     <string name="app_name">RelativeLayout</string>
     <string name="cambiar">Cambiar</string>
     <string name="canal_5">Canal 5</string>
-    <string name="mensaje">Sintonzianos la proxima semana en:</string>
+    <string name="mensaje">Sintonizanos la proxima semana en:</string>
+    <string name="datos">Datos</string>
+    <string name="valor">Valor</string>
 </resources>
