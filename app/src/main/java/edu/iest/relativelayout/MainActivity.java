@@ -2,6 +2,7 @@ package edu.iest.relativelayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Button bnCanal = findViewById(R.id.boton);
         EditText etCanal = findViewById(R.id.etCanal);
         TextView tvCanal = findViewById(R.id.tvCanal);
+        TextView tvCambioCanal = findViewById(R.id.tvCambioCanal);
         Spinner spProgramas = findViewById(R.id.programa);
         ivContinuara = findViewById(R.id.ivContinuara);
 
@@ -35,12 +37,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 //obtendremos el valor del edittext y lo asignaremos al textview inferior
 
                 String texto = etCanal.getText().toString();
-                Toast.makeText(MainActivity.this,"El valor era "+texto, Toast.LENGTH_LONG).show();
-                tvCanal.setText(texto);
+                Toast.makeText(MainActivity.this,"El canal es  "+texto, Toast.LENGTH_LONG).show();
+                tvCambioCanal.setText(texto);
+            }
+        });
+        ivContinuara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,DatosActivity.class);
+                startActivity(i);
             }
         });
     }
     private ImageView ivContinuara;
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int posicion, long l) {
@@ -60,4 +70,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }

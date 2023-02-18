@@ -59,6 +59,17 @@
         <TextView
             android:id="@+id/valorPrograma"
             />
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bnRegresar"
+            android:layout_span="2"
+            android:text="@string/regresar"
+            />
 
     </TableRow>
 
