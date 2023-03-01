@@ -6,6 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import org.w3c.dom.Text;
 
 public class DatosActivity extends AppCompatActivity {
 
@@ -15,6 +21,8 @@ public class DatosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_datos);
 
         Button bnRegresar = findViewById(R.id.bnRegresar);
+        TextView valorCanal = findViewById(R.id.valorCanal);
+        TextView valorPrograma = findViewById(R.id.valorPrograma);
 
         bnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +31,18 @@ public class DatosActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        if(getIntent() != null){
+            Bundle extras = getIntent().getExtras();
+            if (extras != null){
+                String canal = extras.getString("canal");
+                String programa = extras.getString("programa");
+                valorCanal.setText(canal);
+                valorPrograma.setText(programa);
+                Snackbar.make(bnRegresar,"Lo obtenido es " + canal, Snackbar.LENGTH_LONG).show();
+                Snackbar.make(bnRegresar,"Lo obtenido es " + programa, Snackbar.LENGTH_LONG).show();
+            }
+        }
 
     }
 }

@@ -44,7 +44,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ivContinuara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Spinner spProgramas = findViewById(R.id.programa);
+                EditText etCanal = findViewById(R.id.etCanal);
                 Intent i = new Intent(MainActivity.this,DatosActivity.class);
+                i.putExtra("canal", etCanal.getText().toString());
+                i.putExtra("programa",spProgramas.getSelectedItem().toString());
                 startActivity(i);
             }
         });
